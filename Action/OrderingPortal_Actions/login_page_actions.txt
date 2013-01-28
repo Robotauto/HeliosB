@@ -1,0 +1,10 @@
+*** Settings ***
+Resource          ../../Interface/Ordering_Portal_Pages/login_page.txt
+Library           Selenium2Library
+
+*** Keywords ***
+Log Into Admin Portal
+    [Arguments]    ${USERNAME}    ${PASSWORD}
+    Input Text    ${TXT USERNAME}    ${USERNAME}
+    Input Password    ${TXT PASSWORD}    ${PASSWORD}
+    Click Button    ${BTN LOGIN}

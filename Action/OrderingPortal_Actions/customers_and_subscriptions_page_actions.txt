@@ -1,0 +1,11 @@
+*** Settings ***
+Library           Selenium2Library
+Resource          ../../Interface/Ordering_Portal_Pages/customer_and_subscription_page.txt
+Resource          ../../configuration.html
+
+*** Keywords ***
+The searching result should be followed the input
+    [Arguments]    ${input}
+    Wait Until Page Contains Element    ${CUSTOMERS AND SUBSCRIPTION PAGE ID}    ${SHORT TIME}
+    Wait Until Page Contains Element    //p[starts-with(@id,'results')]    ${SHORT TIME}
+    Element Should Be Visible    //p[starts-with(text(), 'Results')]//b[2]//span[text()= '${input}']    The searching result is not displayed

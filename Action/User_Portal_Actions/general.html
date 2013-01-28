@@ -1,0 +1,483 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+html {
+  font-family: Arial,Helvetica,sans-serif;
+  background-color: white;
+  color: black;
+}
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 1em 0em;
+  border: 1px solid black;
+}
+th, td {
+  border: 1px solid black;
+  padding: 0.1em 0.2em;
+  height: 1.5em;
+  width: 12em;
+}
+td.colspan4, th.colspan4 {
+    width: 48em;
+}
+td.colspan3, th.colspan3 {
+    width: 36em;
+}
+td.colspan2, th.colspan2 {
+    width: 24em;
+}
+th {
+  background-color: rgb(192, 192, 192);
+  color: black;
+  height: 1.7em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+td.name {
+  background-color: rgb(240, 240, 240);
+  letter-spacing: 0.1em;
+}
+td.name, th.name {
+  width: 10em;
+}
+</style>
+<title>General</title>
+</head>
+<body>
+<h1>General</h1>
+<table border="1" id="setting">
+<tr>
+<th class="name" colspan="5">Settings</th>
+</tr>
+<tr>
+<td class="name">Library</td>
+<td>Collections</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Library</td>
+<td>String</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Library</td>
+<td>BuiltIn</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<table border="1" id="keyword">
+<tr>
+<th class="name" colspan="5">Keywords</th>
+</tr>
+<tr>
+<td class="name"><a name="keyword_Click Element By Text">Click Element By Text</a></td>
+<td>[Arguments]</td>
+<td>${text}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${tag_list}=</td>
+<td>Create List</td>
+<td>a</td>
+<td>span</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>div</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${count}=</td>
+<td>Get Length</td>
+<td>${tag_list}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>: FOR</td>
+<td>${index}</td>
+<td>IN RANGE</td>
+<td>0</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${count}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>${tag}=</td>
+<td>Get From List</td>
+<td>${tag_list}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>...</td>
+<td>${index}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>${xpath}=</td>
+<td>Set Variable</td>
+<td>//${tag}[contains(text(),'${text}')]</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>${status}</td>
+<td>${value}=</td>
+<td>Run Keyword And Ignore Error</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>...</td>
+<td>Page Should Contain Element</td>
+<td>${xpath}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>Run Keyword If</td>
+<td>'${status}'=='PASS'</td>
+<td>Click Element</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>...</td>
+<td>${xpath}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>Run Keyword If</td>
+<td>'${status}'=='PASS'</td>
+<td>Log</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>...</td>
+<td>Element is found</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>Run Keyword If</td>
+<td>'${status}'=='PASS'</td>
+<td>Exit For Loop</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Run Keyword Unless</td>
+<td>'${status}'=='PASS'</td>
+<td>Log</td>
+<td>Element not found</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_Wait Until Page Not Contains Element">Wait Until Page Not Contains Element</a></td>
+<td>[Arguments]</td>
+<td>${locator}</td>
+<td>${time_out}</td>
+<td># ${time_out} is in second</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>: FOR</td>
+<td>${index}</td>
+<td>IN RANGE</td>
+<td>0</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${time_out}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>${status}</td>
+<td>${value}=</td>
+<td>Run Keyword And Ignore Error</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>...</td>
+<td>Page Should Contain Element</td>
+<td>${locator}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>Run Keyword If</td>
+<td>'${status}'=='PASS'</td>
+<td>Sleep</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>...</td>
+<td>1s</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>Run Keyword Unless</td>
+<td>'${status}'=='PASS'</td>
+<td>Log</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>...</td>
+<td>The element is disapeared after ${index}s</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>Run Keyword Unless</td>
+<td>'${status}'=='PASS'</td>
+<td>Exit For Loop</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Run Keyword If</td>
+<td>'${status}'=='PASS'</td>
+<td>Log</td>
+<td>The element is still displayed after ${time_out}s</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_Generate Random String TL">Generate Random String TL</a></td>
+<td>[Arguments]</td>
+<td>${length}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${result}=</td>
+<td>Generate Random String</td>
+<td>${length}</td>
+<td>[LETTERS]</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Return]</td>
+<td>${result}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_Generate Random Number">Generate Random Number</a></td>
+<td>[Arguments]</td>
+<td>${length}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${result}=</td>
+<td>Set Variable</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>: FOR</td>
+<td>${index}</td>
+<td>IN RANGE</td>
+<td>0</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${length}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>${random}=</td>
+<td>Evaluate</td>
+<td>random.randint(0, 9)</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>...</td>
+<td>random,sys</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>${result}=</td>
+<td>Set Variable</td>
+<td>${result}${random}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${result}=</td>
+<td>Convert To String</td>
+<td>${result}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Return]</td>
+<td>${result}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_Get Contact Information In DB">Get Contact Information In DB</a></td>
+<td>Connect To My Database</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${result}=</td>
+<td>Query</td>
+<td>SELECT * FROM Contact</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Return]</td>
+<td>${result}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_Get UP Customer">Get UP Customer</a></td>
+<td>[Arguments]</td>
+<td>${Type}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Connect To My Database</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${CUSTOMER}=</td>
+<td>Query</td>
+<td>SELECT * FROM UP_User WHERE Customer_Type = '${Type}'</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Set Global Variable</td>
+<td>${USERNAME}</td>
+<td>${CUSTOMER[0][1]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Set Global Variable</td>
+<td>${PASSWORD}</td>
+<td>${CUSTOMER[0][2]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="keyword_Generate Random Number 50">Generate Random Number 50</a></td>
+<td>${result}</td>
+<td>Evaluate</td>
+<td>random.randint(0, 50)</td>
+<td>random,sys</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>[Return]</td>
+<td>${result}</td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,1750 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<style type="text/css">
+html {
+  font-family: Arial,Helvetica,sans-serif;
+  background-color: white;
+  color: black;
+}
+table {
+  border-collapse: collapse;
+  empty-cells: show;
+  margin: 1em 0em;
+  border: 1px solid black;
+}
+th, td {
+  border: 1px solid black;
+  padding: 0.1em 0.2em;
+  height: 1.5em;
+  width: 12em;
+}
+td.colspan4, th.colspan4 {
+    width: 48em;
+}
+td.colspan3, th.colspan3 {
+    width: 36em;
+}
+td.colspan2, th.colspan2 {
+    width: 24em;
+}
+th {
+  background-color: rgb(192, 192, 192);
+  color: black;
+  height: 1.7em;
+  font-weight: bold;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+td.name {
+  background-color: rgb(240, 240, 240);
+  letter-spacing: 0.1em;
+}
+td.name, th.name {
+  width: 10em;
+}
+</style>
+<title>UserPortal Testcase</title>
+</head>
+<body>
+<h1>UserPortal Testcase</h1>
+<table border="1" id="setting">
+<tr>
+<th class="name" colspan="5">Settings</th>
+</tr>
+<tr>
+<td class="name">Test Teardown</td>
+<td>Close All Browsers</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Library</td>
+<td>Selenium2Library</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Library</td>
+<td>BuiltIn</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/account_profile_page.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/call_history_page.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/company_directory_page.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/contacts_page.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/general_page.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/manage_device_contact.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/login_page.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/manage_device_contact.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Action/User_Portal_Actions/login_page_actions.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Action/User_Portal_Actions/contacts_page_actions.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/reset_password_page.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/edit_contact_dialog.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Action/User_Portal_Actions/general.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Action/Database_Actions/database_actions.txt</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Action/Device_Actions/tandberg_actions.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../configuration.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name">Resource</td>
+<td>../Interface/User_Portal_Pages/account_page.html</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+<table border="1" id="testcase">
+<tr>
+<th class="name" colspan="5">Test Cases</th>
+</tr>
+<tr>
+<td class="name"><a name="test_TC1472 - Verify that when user logged into user portal clicks log out link, user is redirected to login page.">TC1472 - Verify that when user logged into user portal clicks log out link, user is redirected to login page.</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_PRED_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>20s</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 1: UserA(Billing Admin) logs into User portal.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log_Into_UserPortal</td>
+<td>${USERNAME}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Verify (1) UserA sees a link to logout from the portal.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Page Should Contain Element</td>
+<td>${LNK_LOGOUT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 2: UserA clicks at logout link</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${LNK_LOGOUT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Verify (2) Verify that UserA is redirected to login page.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${LOGIN_PAGE_ID}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${LOGIN_PAGE_ID}</td>
+<td>UserA is NOT redirected to login page.</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC927 - Verify that when user who checks-in &quot;Keep me logged in&quot; checkbox on user portal login page, logs out after successful login - user is not automatically signed in to portal and is asked to enter username and password again.">TC927 - Verify that when user who checks-in "Keep me logged in" checkbox on user portal login page, logs out after successful login - user is not automatically signed in to portal and is asked to enter username and password again.</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>20s</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 1: UserA browses to User Portal using Firefox and enters her username and password.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>${TXT_USERNAME}</td>
+<td>${USERNAME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Password</td>
+<td>${TXT_PASSWORD}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 2: UserA does not check the checkbox "Keep me logged in".</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 3: UserA clicks Login button.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${BTN_SIGNIN}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Verify (3) UserA is taken to the homepage.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${CONTACT_PAGE_ID}</td>
+<td>10s</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${CONTACT_PAGE_ID}</td>
+<td>User is NOT logged into User portal page</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 4: UserA clicks at Logout button.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${LNK_LOGOUT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Verify (4) Verify that UserA is taken to login screen and is asked to enter username and password again.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${LOGIN_PAGE_ID}</td>
+<td>10s</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${TXT_USERNAME}</td>
+<td>Username textbox is not displayed</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${TXT_PASSWORD}</td>
+<td>Password textbox is not displayed</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC928 - Verify that on user portal login page a check box appears for &quot;Keep me logged/ signed in&quot;.">TC928 - Verify that on user portal login page a check box appears for "Keep me logged/ signed in".</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>10s</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 1: UserA browses to User Portal.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Verify (1) that UserA sees a check box to keep user logged in to user portal session.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${CHKBOX_KEEP_ME_LOG_IN}</td>
+<td>Keep me logged in checkbox is NOT displayed</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC945 - Customer admin can get to the &quot;Manage company directory&quot; page by clicking on &quot;Contacts&quot; tab.">TC945 - Customer admin can get to the "Manage company directory" page by clicking on "Contacts" tab.</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>1. Access User Portal as customer admin in Pre-Conditions</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log_Into_UserPortal</td>
+<td>${USERNAME}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>2. Click on Contacts tab</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${CONTACT_TAB}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>3. Verify the page displays</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${CONTACT_PAGE_ID}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Verify (3) The "Manage company directory" page displays.</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${MANAGE_COMPANY_DIRECTORY_PAGE_TITLE}</td>
+<td>The "Manage company directory" page is Not displayed.</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC1026 - Customer admin can update his info in Account/Profile">TC1026 - Customer admin can update his info in Account/Profile</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 1: Log in UP as customer admin</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log_Into_UserPortal</td>
+<td>${USERNAME}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 2: Navigate to Account/Profile</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${ACCOUNT_TAB}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${ACCOUNT_PAGE_ID}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${PROFILE_TAB}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 3: Verify that customer admin can access Profile page</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${PROFILE_PAGE_ID}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Verify (3) The Profile page is displayed</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${PROFILE_PAGE_ID}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 4: Click Edit link of Admintrative Contact</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${LNK_CUSTOMER_ADMIN_EDIT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_ADMIN_FIRST_NAME}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 5: Update some info such as first name, last name, phone number</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${NEW_FIRST_NAME}=</td>
+<td>Generate Random String</td>
+<td>8</td>
+<td>[LETTERS]</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${NEW_LAST_NAME}=</td>
+<td>Generate Random String</td>
+<td>8</td>
+<td>[LETTERS]</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${NEW_PHONE_NUMBER}=</td>
+<td>Generate Random Number</td>
+<td>10</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>${TXT_ADMIN_FIRST_NAME}</td>
+<td>${NEW_FIRST_NAME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>${TXT_ADMIN_LAST_NAME}</td>
+<td>${NEW_LAST_NAME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>${TXT_ADMIN_LANDLINE_PHONE}</td>
+<td>${NEW_PHONE_NUMBER}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${BTN_SAVE_ADMIN}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${LNK_CUSTOMER_ADMIN_EDIT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 6: Verify that customer admin can update his info</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${LNK_CUSTOMER_ADMIN_EDIT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_ADMIN_FIRST_NAME}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${CURRENT_FIRST_NAME}=</td>
+<td>Get Value</td>
+<td>${TXT_ADMIN_FIRST_NAME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${CURRENT_LAST_NAME}=</td>
+<td>Get Value</td>
+<td>${TXT_ADMIN_LAST_NAME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${CURRENT_PHONE_NUMBER}=</td>
+<td>Get Value</td>
+<td>${TXT_ADMIN_LANDLINE_PHONE}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Verify (6) The new info is updated and displayed in Profile page</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Should Be Equal</td>
+<td>${CURRENT_FIRST_NAME}</td>
+<td>${NEW_FIRST_NAME}</td>
+<td>First name is not updated</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Should Be Equal</td>
+<td>${CURRENT_LAST_NAME}</td>
+<td>${NEW_LAST_NAME}</td>
+<td>Last name is not updated</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Should Be Equal</td>
+<td>${CURRENT_PHONE_NUMBER}</td>
+<td>${NEW_PHONE_NUMBER}</td>
+<td>Phone number is not updated</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC882 - Verify that an error message shows up saying that invalid username/ password combination when user does not enter correct password on login screen.">TC882 - Verify that an error message shows up saying that invalid username/ password combination when user does not enter correct password on login screen.</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>${TXT_USERNAME}</td>
+<td>upautomation01@tmailinator.com</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Password</td>
+<td>${TXT_PASSWORD}</td>
+<td>wrongPassword</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Button</td>
+<td>${BTN_SIGNIN}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${LBL_FEEDBACK_ERROR1}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${LBL_FEEDBACK_ERROR1}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC883 - Verify that an error message shows up saying that invalid username/ password combination when user does not enter correct username on login screen.">TC883 - Verify that an error message shows up saying that invalid username/ password combination when user does not enter correct username on login screen.</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Text</td>
+<td>${TXT_USERNAME}</td>
+<td>wrongUserName</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Input Password</td>
+<td>${TXT_PASSWORD}</td>
+<td>ctbu4ever</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Button</td>
+<td>${BTN_SIGNIN}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${LBL_FEEDBACK_ERROR1}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${LBL_FEEDBACK_ERROR1}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC884 - Verify that when user logged into user portal clicks log out link, user is redirected to login page.">TC884 - Verify that when user logged into user portal clicks log out link, user is redirected to login page.</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log_Into_UserPortal</td>
+<td>${USERNAME}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Link</td>
+<td>${LNK_LOGOUT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${LOGIN_PAGE_ID}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${TXT_USERNAME}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC889 - Verify that Password reset page shows Password validation rules.">TC889 - Verify that Password reset page shows Password validation rules.</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log_Into_UserPortal</td>
+<td>${USERNAME}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${TAB_ACCOUNT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${PROFILE_TAB}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${RESET_PASSWORD_LINK}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${LBL_PASSWORD_RULE_PANEL}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${LBL_PASSWORD_RULE_PANEL}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${LNK_LOGOUT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC925 - There is an option to &quot;Hide from company directory&quot; for company directory entry automatically created by cloud (based on subscriptions) at the bottom of the Directory Edit form">TC925 - There is an option to "Hide from company directory" for company directory entry automatically created by cloud (based on subscriptions) at the bottom of the Directory Edit form</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log_Into_UserPortal</td>
+<td>${USERNAME}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${TAB_CONTACTS}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${MANAGE_COMPANY_DIRECTORY_TAB}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>//span[contains(text(),'Premium 01')]</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>//span[contains(text(),'Premium 01')]</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${LBL_DONT_SHOW_CONTACT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${LBL_DONT_SHOW_CONTACT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${BTN_CANCEL}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Sleep</td>
+<td>5s</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${LNK_LOGOUT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC926 - Verify that Directory page shows up when Customer Admin clicks at Manage Company Directory tab under Contacts tab.">TC926 - Verify that Directory page shows up when Customer Admin clicks at Manage Company Directory tab under Contacts tab.</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Wait Until Page Contains Element</td>
+<td>${TXT_USERNAME}</td>
+<td>${SHORT TIME}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log_Into_UserPortal</td>
+<td>${USERNAME}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${MANAGE_COMPANY_DIRECTORY_TAB}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Element Should Be Visible</td>
+<td>${MANAGE_COMPANY_DIRECTORY_PAGE_TITLE}</td>
+<td>"Manage Company Directory page is not displayed"</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC0088 - Get info from Database and make call">TC0088 - Get info from Database and make call</a></td>
+<td>Comment</td>
+<td>Step 1: Get config from database</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${Cloud_Config}=</td>
+<td>Get Cloud Configuration</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${Device_Info}=</td>
+<td>Get Subscriptions</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${PROVISIONING HOST}=</td>
+<td>Set Variable</td>
+<td>${Cloud_Config[1][2]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${Device 1 Address}=</td>
+<td>Set Variable</td>
+<td>${Device_Info[0][4]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${Device 2 Address}=</td>
+<td>Set Variable</td>
+<td>${Device_Info[1][4]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${Device 1 Number}=</td>
+<td>Set Variable</td>
+<td>${Device_Info[0][3]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${Device 2 Number}=</td>
+<td>Set Variable</td>
+<td>${Device_Info[1][3]}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 2: Connect and Add provisioning host for device</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Connect to Tandberg device</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log Into Device</td>
+<td>${DEVICE_ROOT}</td>
+<td>${DEVICE_ROOT_PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Add Provisioning Host</td>
+<td>${PROVISIONING HOST}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Step 3: Make call from device 1 to device 2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${Response}</td>
+<td>Make Call From 2 Devices</td>
+<td>${Device 2 Address}</td>
+<td>${Device 1 Address}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>${Device 1 Number}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Should Be Equal As Strings</td>
+<td>${Response}</td>
+<td>&lt;Response [200]&gt;</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TCXXX - Add contact to Company Directory">TCXXX - Add contact to Company Directory</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_PREE_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log_Into_UserPortal</td>
+<td>${USERNAME_PREE}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>: FOR</td>
+<td>${i}</td>
+<td>IN RANGE</td>
+<td>0</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>1000</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>${FN}</td>
+<td>Generate Random String TL</td>
+<td>9</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>${LN}</td>
+<td>Generate Random String TL</td>
+<td>9</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>${Phone}</td>
+<td>Generate Random Number</td>
+<td>10</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>Add Company Contact</td>
+<td>${FN}</td>
+<td>${LN}</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>...</td>
+<td>${Phone}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TCXXX - Customer Admin can search an entry in Company directory page">TCXXX - Customer Admin can search an entry in Company directory page</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_PREE_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log_Into_UserPortal</td>
+<td>${USERNAME_PREE}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>${Name}</td>
+<td>Set Variable</td>
+<td>UgHVumMW lRsTWoMOK</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Search Company Entry</td>
+<td>${Name}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>//span[text()='${Name}']</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Sleep</td>
+<td>10s</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TCXXX - 01">TCXXX - 01</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_PREE_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Log_Into_UserPortal</td>
+<td>${USERNAME_PREE}</td>
+<td>${PASSWORD}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Click Element</td>
+<td>${BTN_ADD_ENTRY}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Sleep</td>
+<td>5s</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Click Element</td>
+<td>${TAB_SUPPORT}</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Sleep</td>
+<td>3s</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Confirm Action</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Log</td>
+<td>Dialog should be closed</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Comment</td>
+<td>Sleep</td>
+<td>10s</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${TAB_ACCOUNT}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${TAB_USAGE}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Click Element</td>
+<td>${LNK_DOWNLOAD_HISTORY}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Confirm Action</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Choose File</td>
+<td></td>
+<td>C:\Users\thanh.viet.le\Desktop\</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Confirm Action</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TCXXX - 02">TCXXX - 02</a></td>
+<td>Comment</td>
+<td>Precondition: Open browser and go to Homepage</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Open Browser</td>
+<td>${USER_PORTAL_PREE_URL}</td>
+<td>ff</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>Maximize Browser Window</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"><a name="test_TC Sikuli">TC Sikuli</a></td>
+<td>:FOR</td>
+<td>${i}</td>
+<td>IN RANGE</td>
+<td>0</td>
+</tr>
+<tr>
+<td class="name"></td>
+<td>...</td>
+<td>800</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>${r}</td>
+<td>Generate Random Number 50</td>
+<td></td>
+</tr>
+<tr>
+<td class="name"></td>
+<td></td>
+<td>Run Keyword If</td>
+<td>${r} == 50</td>
+<td>Exit For Loop</td>
+</tr>
+</table>
+</body>
+</html>
