@@ -15,9 +15,14 @@ function Thanle2-second()
 function ThanhLe_second()
 {
 	print "From Thanh Le's laptop - the second function of Thanh Le"
+<<<<<<< HEAD
+=======
+	
+>>>>>>> TK add 3:19PM
 }
 
 Thach Kieu add 3:12PM
+Thach Kieu add 3:19PM
 
 
 Thanh Le dep gai
