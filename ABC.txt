@@ -21,3 +21,8 @@ function Thanh_Le_New()
 {
 	print "This is new Thanh Le function"
 }
+
+function thanle2_new()
+{
+	print "new functions"
+}
