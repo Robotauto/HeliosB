@@ -17,10 +17,7 @@ function ThanhLe_second()
 	print "From Thanh Le's laptop - the second function of Thanh Le"
 }
 
-Thach Kieu add 3:12PM
-Thach Kieu add 3:19PM
-ThachKieu branch add 3:27PM
-
-
-Thanh Le dep gai 3:31
-
+function Thanh_Le_New()
+{
+	print "This is new Thanh Le function"
+}
