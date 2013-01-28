@@ -1,6 +1,6 @@
 function Thanle2()
 {
-	print "Thanh Le editted this function"
+	print "Thanle2 edited this funciton"
 }
 
 function ThanhLe()
