@@ -1,4 +1,0 @@
-*** Variables ***
-${TXT USERNAME}    //input[@name='inputUsername']
-${TXT PASSWORD}    //input[@name='inputPassword']
-${BTN LOGIN}      //button[@type='submit']

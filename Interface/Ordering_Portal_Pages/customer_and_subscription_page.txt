@@ -1,4 +1,0 @@
-*** Variables ***
-${BTN ADD CUSTOMER}    //button[@name='add-button']
-${CUSTOMERS AND SUBSCRIPTION PAGE ID}    //div[@id='page-search']
-${TAB CUSTOMERS AND SUBSCRIPTION}    //a[text()='Customers & Subscriptions']

@@ -1,4 +1,0 @@
-*** Variables ***
-${HOMEPAGE ID}    //div[@id='page-orders']
-${TAB HOMEPAGE}    //a[text()='Orders & Quotes']
-${TXT SEARCH}     //Input[@name='searchQuery']

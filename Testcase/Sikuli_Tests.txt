@@ -1,7 +1,0 @@
-*** Settings ***
-Library           ../Sikuli-Folder/SaveFile.py
-
-*** Test Cases ***
-TC001 - Sikuli
-    Log    asasdas
-    Hello_World
