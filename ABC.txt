@@ -2,3 +2,8 @@ function Thanle2()
 {
 	print "From Thanle2's laptop"
 }
+
+function ThanhLe()
+{
+	print "From Thanh Le's laptop"
+}
