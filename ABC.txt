@@ -7,3 +7,8 @@ function ThanhLe()
 {
 	print "From Thanh Le's laptop"
 }
+
+function ThanhLe_second()
+{
+	print "From Thanh Le's laptop - the second function of Thanh Le"
+}
