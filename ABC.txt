@@ -1,0 +1,4 @@
+function Thanle2()
+{
+	print "From Thanle2's laptop"
+}
