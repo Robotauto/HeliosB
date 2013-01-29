@@ -1,4 +1,4 @@
-funtion Hello_World()
+funtion Hello_World_TL002()
 {
-	print "Hello world!"
+	print "Hello world! Made by ThanhLe002."
 }
